@@ -11,7 +11,7 @@ npm install
 
 # Running the tests on Chrome browser
 
-Change the `browsers` option `karma.config.js` to
+Change the `browsers` option in `karma.config.js` to
 
 ```js
 browsers: [ "Chrome" ],
@@ -32,7 +32,7 @@ In the above output 44 of 100 tests failed. This number is not consistent.
 
 # Running tests on Chrome headless browser
 
-Change the `browsers` option `karma.config.js` to
+Change the `browsers` option in `karma.config.js` to
 
 ```js
 browsers: [ "ChromeHeadless" ],
@@ -49,13 +49,13 @@ The output
 ![chrome output](./doc/output-headless-1.png)
 ![chrome output](./doc/output-headless-2.png)
 
-In the above output 54 of 100 tests failed. This number is not consistent.
+In the above output 56 of 100 tests failed. This number is not consistent.
 
 # Observation 1
 
-The output shows `[object ErrorEvent] thrown`. That is because jasmine does not know how to report an `ErrorEvent` object. To see the actual error you can change the file in 
+The output shows `[object ErrorEvent] thrown`. That is because jasmine does not know how to report an `ErrorEvent` object. You can change the file in 
 `node_modules/jasmine-core/lib/jasmine-core/jasmine.js`
-change lines 2283-228s from
+at lines 2283-2287 from
 
 ```js
 if (error.name && error.message) {
